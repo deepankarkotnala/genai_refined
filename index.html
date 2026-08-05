@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#f4f5f8" name="theme-color"/>
+<title>GenAI Learning Hub — Curriculum · Agents · RAG · Interviews</title>
+<!-- Interview Preparation brand metadata -->
+<link href="assets/brand/favicon.svg?v=20260727c" rel="icon" type="image/svg+xml"/>
+<link href="assets/brand/favicon-32.png?v=20260727c" rel="icon" sizes="32x32" type="image/png"/>
+<link href="assets/brand/favicon.ico?v=20260727c" rel="shortcut icon"/>
+<link href="assets/brand/apple-touch-icon.png?v=20260727c" rel="apple-touch-icon" sizes="180x180"/>
+<link href="assets/brand/site.webmanifest?v=20260727c" rel="manifest"/>
+<link color="#6f47f5" href="assets/brand/safari-pinned-tab.svg?v=20260727c" rel="mask-icon"/>
+<link href="assets/brand/social-card.png?v=20260727c" rel="image_src"/>
+<meta content="Switch job" name="application-name"/>
+<meta content="Switch job" name="apple-mobile-web-app-title"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="#2563eb" name="msapplication-TileColor"/>
+<meta content="assets/brand/browserconfig.xml?v=20260727c" name="msapplication-config"/>
+<meta content="website" property="og:type"/>
+<meta content="Switch job Learning Platform" property="og:site_name"/>
+<meta content="GenAI Learning Hub — Curriculum · Agents · RAG · Interviews" property="og:title"/>
+<meta content="One clear path through GenAI engineering: the Mastery curriculum, the AI Agents course, a single end-to-end RAG guide, focused deep dives, and one interview-questions section." property="og:description"/>
+<meta content="assets/brand/social-card.png?v=20260727c" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Switch job learning platform logo" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="GenAI Learning Hub — Curriculum · Agents · RAG · Interviews" name="twitter:title"/>
+<meta content="One clear path through GenAI engineering: the Mastery curriculum, the AI Agents course, a single end-to-end RAG guide, focused deep dives, and one interview-questions section." name="twitter:description"/>
+<meta content="assets/brand/social-card.png?v=20260727c" name="twitter:image"/>
+<link href="assets/brand/favicon-16.png?v=20260727c" rel="icon" sizes="16x16" type="image/png"/>
+<!-- /Interview Preparation brand metadata -->
+<meta content="One clear path through GenAI engineering: the Mastery curriculum, the AI Agents course, a single end-to-end RAG guide, focused deep dives, and one interview-questions section." name="description"/>
+<!-- Theme before first paint. Without this the document paints with the light
+     tokens and only flips when app.js runs at the end of <body>, which is a
+     white flash on every navigation in dark mode. Mirrors app.js's getTheme()
+     exactly — same key, same "light" default — so the pre-paint value can never
+     disagree with what the scripts apply a moment later. Inline and blocking on
+     purpose: an external file would cost a round trip before first paint. -->
+<script>(function(){try{var d=document.documentElement;var t=localStorage.getItem("gp.theme")||"light";d.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==="dark"?"#17191e":"#f3f4f6";/* Reading size and width, same reason as the theme: applying them after first paint reflows the whole lesson. Contract shared with enhance.js: key "gp.reading", {"size","width"}; unknown size -> "s" on phones and "xs" above 860px, unknown width -> "wide", unknown align -> "left". */var r={};try{r=JSON.parse(localStorage.getItem("gp.reading"))||{};}catch(e2){}var mob=!!(window.matchMedia&&window.matchMedia("(max-width:860px)").matches);var sz=["xs","s","m","l","xl"].indexOf(r.size)>=0?r.size:(mob?"s":"xs");var wd=["default","wide","full"].indexOf(r.width)>=0?r.width:"wide";var al=r.align==="justify"?"justify":"left";d.setAttribute("data-reading-size",sz);d.setAttribute("data-reading-width",wd);d.setAttribute("data-reading-align",al);/* Page transitions. `PageRevealEvent` is the only honest test for a CROSS-document view transition — CSS @supports(view-transition-name) answers yes on browsers that only do the same-document kind, which is what silently disabled the fallback and left them with a hard cut. Pre-paint for the same reason as the theme: gating this from a body script lets the arrival animation start and then cancels it, which is the flash it removes. */if("PageRevealEvent" in window){d.classList.add("xvt");window.addEventListener("pagereveal",function(ev){if(!ev.viewTransition)return;d.classList.add("vt-in");var off=function(){d.classList.remove("vt-in")};ev.viewTransition.finished.then(off,off);});}}catch(e){}})();</script>
+<link href="assets/styles.css?v=20260805a" rel="stylesheet"/>
+<link href="assets/office-theme.css?v=20260805c" rel="stylesheet"/>
+<link href="assets/genai-motion.css?v=20260804c" rel="stylesheet"/>
+<link href="assets/glossary.css?v=20260802b" rel="stylesheet"/>
+<!-- Release 2 runtime. The manifest loads first, the renderer second; classic
+     deferred scripts execute in document order after parsing, so the nav slot
+     exists and the manifest is defined before the renderer runs. The authored
+     links inside [data-page-nav] stay in the source and are replaced only after
+     page, route and fragment have all resolved. -->
+<script defer src="assets/curriculum.js?v=20260804c"></script>
+<script defer src="assets/page-nav.js?v=20260804c"></script>
+</head>
+<body data-curriculum-id="hub-home" data-page="00">
+<div class="app">
+<aside class="sidebar">
+<div class="brand">
+<a class="brand-link" href="index.html" aria-label="Switch job home">
+<span class="brand-mark" aria-hidden="true"><img src="assets/brand/switch-job-logo.png?v=20260727c" alt=""/></span>
+<div class="brand-text"><strong>Switch job</strong><span>Learning Platform</span></div>
+</a>
+</div>
+<div class="search-wrap">
+<div class="search-box">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+<input data-search="" placeholder="Search everything…  ( / )" type="text"/>
+</div>
+<div class="search-results"></div>
+</div>
+<nav class="nav"></nav>
+</aside>
+<div class="backdrop"></div>
+<div class="main">
+<header class="topbar">
+<button aria-label="Menu" class="icon-btn menu-btn">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M3 12h18M3 6h18M3 18h18"></path></svg>
+</button>
+<div class="crumbs"><b>Home — GenAI Learning Hub</b></div>
+<button aria-label="Toggle theme" class="icon-btn" data-theme-toggle=""></button>
+</header>
+<div class="content-wrap">
+<main class="content">
+<div class="hero">
+<div class="eyebrow"><span class="dot"></span> The complete curriculum</div>
+<h1>Learn GenAI engineering in a <span class="grad">clear topic sequence</span></h1>
+<p class="lead">A first-principles, hands-on path through LLMs, Transformers, Embeddings, Vector DBs, RAG, Agents, MCP, LangGraph and Production GenAI. Basic programming logic is enough to begin; the portal stays focused on GenAI concepts, systems and interview preparation rather than teaching Python from scratch.</p>
+<div class="meta-row" style="justify-content:center">
+<span class="pill">One topic, one page</span>
+<span class="pill" data-metric-count="home-core-modules">14 core modules</span>
+<span class="pill" data-metric-count="home-capstone-projects">10 capstone projects</span>
+<span class="pill red">One interview section</span>
+<span class="pill purple">Works offline</span>
+<span class="pill blue">Code · diagrams · quizzes</span>
+</div>
+</div>
+<!-- ===== Start-here reading order (spans every section of the hub) ===== -->
+<div class="readmap">
+<div class="rm-head"><span class="ico">🧭</span><strong>Start here — recommended reading order</strong></div>
+<p class="rm-sub">New to this? Read in this order — each step builds on the one before. Every link opens the right page; use the sidebar to jump between sections anytime.</p>
+<ol><li><a class="rm-link" href="study-plan.html"><span class="rm-ttl">Global Study Plan <span class="tag">Start here</span></span><span class="rm-why">Choose the right route, understand the hours required for every section, and avoid duplicate study across overlapping material.</span></a></li>
+<li>
+<a class="rm-link" href="modules/01_foundations.html">
+<span class="rm-ttl">Foundations of LLMs <span class="tag">Module 01</span></span>
+<span class="rm-why">What an LLM actually is — next-token prediction, tokens, the context window. Everything else assumes this.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="memory.html">
+<span class="rm-ttl">Memory in LLMs <span class="tag">Deep Dive</span></span>
+<span class="rm-why">Why the model is stateless and how the context window works — the mental model behind chat history, RAG and agents.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="modules/04_embeddings.html">
+<span class="rm-ttl">Embeddings &amp; Vector Databases <span class="tag">Modules 04–05</span></span>
+<span class="rm-why">Turning text into vectors and searching them fast — the machinery under both RAG and long-term memory.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="rag-deep-dive.html">
+<span class="rm-ttl">RAG, End-to-End <span class="tag">Module 06 · the only RAG page</span></span>
+<span class="rm-why">Everything about RAG in one place and in order: ground an LLM in your own data (chunk → embed → retrieve → augment → generate), then chunking strategies, hybrid retrieval, reranking and evaluation.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="teach-agents/index.html">
+<span class="rm-ttl">Understanding AI Agents <span class="tag">Course</span></span>
+<span class="rm-why">When an LLM stops just talking and starts <em>doing</em>. Build one support-ticket triage agent from a forty-line loop up to approval gates, guardrails, evaluation and tracing.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="claude-agent.html">
+<span class="rm-ttl">How a Claude Agent Works <span class="tag">Deep Dive</span></span>
+<span class="rm-why">The agent loop made concrete on Claude — tools, the tool runner, the Agent SDK, context &amp; safety.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="agent-protocols.html">
+<span class="rm-ttl">Agent Protocols — MCP · A2A · A2UI <span class="tag">Deep Dive</span></span>
+<span class="rm-why">An agent's three boundaries and the open standard at each: MCP for tools and data, A2A for agent-to-agent delegation, A2UI for agent-generated interfaces.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="guardrails.html">
+<span class="rm-ttl">Guardrails <span class="tag">Deep Dive</span></span>
+<span class="rm-why">The rules an answer must pass before it ships — scope, safety, no leaking secrets or PII, no hallucination.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="llm-evals.html">
+<span class="rm-ttl">LLM Evals <span class="tag">Deep Dive</span></span>
+<span class="rm-why">Prove an LLM app actually works: why vibe testing fails, evaluation methods, golden datasets, and RAG/agent/safety/operational evals — interview-focused.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="llmops.html">
+<span class="rm-ttl">LLMOps <span class="tag">Deep Dive</span></span>
+<span class="rm-why">Take an LLM app from demo to production: versioning, experiment tracking, observability, cost/latency and the operating loop — interview-focused.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="langfuse.html">
+<span class="rm-ttl">Langfuse — Observability <span class="tag">Deep Dive</span></span>
+<span class="rm-why">Once it's running, how you debug and measure it: traces, cost, latency and quality scores.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="langgraph.html">
+<span class="rm-ttl">LangGraph &amp; its components <span class="tag">Deep Dive</span></span>
+<span class="rm-why">Build agents as stateful graphs — state, nodes, edges, the checkpointer and human-in-the-loop. The structure behind a real agent.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="hermes.html">
+<span class="rm-ttl">Hermes — open local models <span class="tag">Deep Dive · optional</span></span>
+<span class="rm-why">Run a capable, free, private agent brain on your own hardware — open function-calling models via Ollama.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="modules/14_production_genai.html">
+<span class="rm-ttl">Frameworks &amp; Production <span class="tag">Modules 08–15</span></span>
+<span class="rm-why">LangChain, LlamaIndex, LangGraph, multi-agent systems and shipping it for real.</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="interview-prep/index.html">
+<span class="rm-ttl">Interview Questions <span class="tag">One section · three banks</span></span>
+<span class="rm-why">Once the concepts are in place, this is the single place to prepare: the GenAI question bank, the Python &amp; AI/ML question bank, and one drill page per technology (FastAPI, WebSockets, LangChain, RAG, MCP).</span>
+</a>
+</li>
+<li>
+<a class="rm-link" href="scenario-practice/index.html">
+<span class="rm-ttl">Scenario Design Studio <span class="tag">System design</span></span>
+<span class="rm-why">Practise agents, RAG, latency, load, security, prompt injection, SQL safety and evaluation through realistic architecture cases.</span>
+</a>
+</li>
+</ol>
+</div>
+
+<h2 id="routes">Choose your route</h2>
+<p>Pick the path that matches your goal. You can switch routes later.</p>
+<div class="grid grid-3">
+<div class="card">
+<h4>Interview Sprint</h4>
+<p>Focused preparation when interviews are close.</p>
+<p><span class="pill" data-metric-count="route-size-interview-sprint">28 steps</span></p>
+<p><a class="btn primary" data-route-entry="interview-sprint" href="modules/00_basics.html?route=interview-sprint">Start Interview Sprint</a></p>
+</div>
+<div class="card">
+<h4>Job-Ready Core</h4>
+<p>Build the practical foundation for projects, interviews and production work.</p>
+<p><span class="pill" data-metric-count="route-size-job-ready">27 steps</span></p>
+<p><a class="btn primary" data-route-entry="job-ready" href="modules/00_basics.html?route=job-ready">Start Job-Ready Core</a></p>
+</div>
+<div class="card">
+<h4>Full-Depth Curriculum</h4>
+<p>Follow the complete curriculum from foundations through advanced practice.</p>
+<p><span class="pill" data-metric-count="route-size-full">69 steps</span></p>
+<p><a class="btn primary" data-route-entry="full" href="modules/01_foundations.html?route=full">Start Full-Depth Curriculum</a></p>
+</div>
+</div>
+<h2 id="sections">What's in the hub</h2>
+<p>Eight sections, each with one job. Each concept has one primary Learn page, supported by related builds, drills, references and assessments.</p>
+<div class="grid grid-2"><a class="card hover" data-reveal="" href="study-plan.html"><span class="ico">⏱</span><h4>Global Study Plan</h4><p>Approximate hours for every section, the recommended AI Engineer route, and a sustainable weekday/weekend cadence.</p></a>
+<a class="card hover" data-reveal="" href="modules/01_foundations.html"><span class="ico">🎓</span><h4>GenAI Mastery</h4><p>The main curriculum, from LLM foundations through embeddings, RAG, agents and frameworks to production GenAI.</p></a>
+<a class="card hover" data-reveal="" href="teach-agents/index.html"><span class="ico">🤖</span><h4>Understanding AI Agents</h4><p>Interview-focused, 15 lessons, one project throughout: a support-ticket triage agent you build and deliberately break. Runs offline, no API key. <em>All 15 lessons complete.</em></p></a>
+<a class="card hover" data-reveal="" href="rag-deep-dive.html"><span class="ico">📚</span><h4>RAG, End-to-End</h4><p>The one place RAG is taught: what it is, chunking, hybrid retrieval, reranking and evaluation, in that order.</p></a>
+<a class="card hover" data-reveal="" href="agent-protocols.html"><span class="ico">🔎</span><h4>Deep Dives</h4><p>Focused single-topic guides: Agent Protocols (MCP · A2A · A2UI), LLM Evals, LLMOps, Langfuse, Guardrails, Memory, LangGraph, Claude Agent and Hermes.</p></a>
+<a class="card hover" data-reveal="" href="interview-prep/index.html"><span class="ico">🎤</span><h4>Interview Questions</h4><p>One section for interview preparation, in three sub-sections: the GenAI question bank, the Python &amp; AI/ML question bank, and one drill page per technology.</p></a>
+<a class="card hover" data-reveal="" href="scenario-practice/index.html"><span class="ico">🏗️</span><h4>Scenario Design Studio</h4><p>Eight guided system-design cases with architecture, trade-offs, scaling, security, evaluation and Python sketches.</p></a>
+<a class="card hover" data-reveal="" href="dsa-prep/index.html"><span class="ico">🧩</span><h4>DSA Interview Preparation</h4><p>The separate coding-round track: Python data structures, algorithm patterns and curated question lists.</p></a>
+</div>
+<h2 id="how">How to use this hub</h2>
+<div class="grid grid-3">
+<div class="card" data-reveal=""><span class="ico">🎯</span><h4>Read top-to-bottom</h4><p>Each module follows the same 15-part structure: summary → first principles → diagrams → deep dive → practice.</p></div>
+<div class="card" data-reveal=""><span class="ico">⚡</span><h4>Run the code</h4><p>Runnable examples where practical, with clearly labelled excerpts for focused concepts. Minimal → intermediate → production for each concept.</p></div>
+<div class="card" data-reveal=""><span class="ico">🧠</span><h4>Test yourself</h4><p>Quizzes, active recall and interview questions reinforce retention with spaced repetition.</p></div>
+</div>
+<h2 id="curriculum">The curriculum</h2>
+<p>Five tracks build on each other. Foundations make the rest make sense; Production turns it into a real system.</p>
+<div data-module-grid=""></div>
+<h2 id="profile">Who this is for</h2>
+<div class="callout key">
+<div class="c-ico">🎓</div>
+<div class="c-body">
+<div class="c-title">Designed for a GenAI learner moving toward interview readiness</div>
+<p>You only need basic programming logic to start: Module 01 introduces every term it uses, and any underlined word can be clicked for a two-line definition where it appears. The curriculum focuses on LLM mental models, retrieval, agents, orchestration, evaluation, security and production architecture—without adding a separate Python-basics syllabus to the portal.</p>
+</div>
+</div>
+<div class="page-nav" data-page-nav>
+<span></span>
+<a class="next" href="modules/01_foundations.html"><div class="dir">Start here →</div><div class="ttl">01 · Foundations of LLMs</div></a>
+</div>
+</main>
+<div class="toc-rail"><nav class="toc"></nav></div>
+</div>
+</div>
+</div>
+<script src="assets/app.js?v=20260731b"></script>
+<script src="assets/sitenav.js?v=20260804b"></script>
+<script src="assets/enhance.js?v=20260804a"></script>
+<script src="assets/genai-motion.js?v=20260728a"></script>
+<script src="assets/glossary.js?v=20260802b"></script>
+<script>
+  // The module grid (built by app.js with bare filenames) links to modules/ from the root.
+  (function(){
+    function fix(){
+      document.querySelectorAll('[data-module-grid] a').forEach(function(a){
+        var h=a.getAttribute('href');
+        // data-root marks a card whose page lives at the site root, not in
+        // modules/ (RAG, End-to-End). Leave those hrefs alone.
+        if(a.hasAttribute('data-root')) return;
+        if(h && h!=='index.html' && h.indexOf('modules/')!==0 && h.indexOf('/')===-1) a.setAttribute('href','modules/'+h);
+      });
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){setTimeout(fix,0);});
+    else setTimeout(fix,0);
+  })();
+</script>
+</body>
+</html>
